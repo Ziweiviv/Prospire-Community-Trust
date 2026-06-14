@@ -27,11 +27,15 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
-    .initiative-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-    }
+    /* ✅ FIXED IMAGE BEHAVIOUR (no cropping issues) */
+/* IMAGE FRAME (FIXED + CONSISTENT CROP) */
+.initiative-card img {
+  width: 100%;
+  height: 180px;          /* slightly cleaner than 170 */
+  object-fit: cover;
+  object-position: center 30%;  /* 👈 THIS is the key fix */
+  display: block;
+}
 
     .btn-card {
       margin-top: 15px;
@@ -57,11 +61,11 @@
     <div class="collapse navbar-collapse" id="nav">
 
       <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-<li class="nav-item"><a class="nav-link" href="initives.html">Initiatives</a></li>
-<li class="nav-item"><a class="nav-link" href="funding.html">Funding & Support</a></li>
-<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="initives.html">Initiatives</a></li>
+        <li class="nav-item"><a class="nav-link" href="funding.html">Funding & Support</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
 
     </div>
@@ -87,61 +91,54 @@
     </p>
 
   </div>
-
 </div>
 
 <!-- INITIATIVES -->
 <div class="container mt-5">
-
   <div class="row">
-<!-- PLAYFUL -->
-<div class="col-12 col-md-6 mb-4">
-  <div class="card initiative-card">
 
-    <div style="height:220px; overflow:hidden;">
-      <img src="PlayfulPackslogo.png"
-           alt="Playful Packs"
-           style="width:100%; height:100%; object-fit:cover; object-position: center 45%;">
+    <!-- PLAYFUL -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card initiative-card">
+
+        <img src="pk.png" alt="Playful Packs">
+
+        <div class="card-body">
+          <h4>Playful Packs</h4>
+
+          <p>
+            A vibrant children’s radio show initiative that connects communities through radio, storytelling, and engaging activities, supporting learning and creativity.
+          </p>
+
+          <a href="playful.html" class="btn btn-info btn-card">
+            Explore Playful Packs
+          </a>
+        </div>
+
+      </div>
     </div>
 
-    <div class="card-body">
-      <h4>Playful Packs</h4>
+    <!-- FAMILY NETWORKS -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card initiative-card">
 
-      <p>A vibrant children’s radio show initiative that connects communities through radio, storytelling, and engaging activities, supporting learning, creativity  </p>
+        <img src="FN.png" alt="Family Network">
 
-      <a href="playful.html" class="btn btn-info btn-card">
-        Explore Playful Packs
-      </a>
+        <div class="card-body">
+          <h4>Family Network</h4>
+
+          <p>
+            A support and connection initiative designed to strengthen families by linking them with community resources, social opportunities, and practical support systems.
+          </p>
+
+          <a href="family-network.html" class="btn btn-info btn-card">
+            Explore Family Network
+          </a>
+        </div>
+
+      </div>
     </div>
 
-  </div>
-</div>
-<!-- FAM NETWORKS -->
-   <div class="col-12 col-md-6 mb-4">
-  <div class="card initiative-card">
-
-    <div style="height:220px; overflow:hidden;">
-      <img src="familynetwork.jpg"
-           alt="Family Network"
-           style="width:100%; height:100%; object-fit:cover; object-position: center 75%;">
-    </div>
-
-    <div class="card-body">
-      <h4>Family Network</h4>
-
-      <p>
-        A support and connection initiative designed to strengthen families
-        by linking them with community resources, social opportunities,
-        and practical support systems that reduce isolation and build resilience.
-      </p>
-
-      <a href="family-network.html" class="btn btn-info btn-card">
-        Explore Family Network
-      </a>
-    </div>
-
-  </div>
-</div>
     <!-- COMMUNITY CHAMPIONS -->
     <div class="col-12 col-md-6 mb-4">
       <div class="card initiative-card">
@@ -150,8 +147,9 @@
 
         <div class="card-body">
           <h4>Community Champions Network</h4>
+
           <p>
-A community education and empowerment initiative that develops trusted local leaders. Community Champions provides practical learning in scam awareness, digital safety, and wellbeing, building confident individuals who can support others in their communities.
+            A series of workshops and educational sessions including digital safety, phishing prevention, wellbeing, and community mental health first responder training.
           </p>
 
           <a href="community-champions.html" class="btn btn-info btn-card">
@@ -170,8 +168,9 @@ A community education and empowerment initiative that develops trusted local lea
 
         <div class="card-body">
           <h4>Leadership Pathways Programme</h4>
+
           <p>
-           A hands-on leadership development programme for emerging leaders. Participants gain experience in event coordination, project planning, teamwork, and community engagement, building practical leadership skills through active community involvement.
+            A hands-on leadership development programme with mentoring, project planning, reflective practice, and real-world community project delivery.
           </p>
 
           <a href="leadership-pathways.html" class="btn btn-info btn-card">
@@ -184,7 +183,7 @@ A community education and empowerment initiative that develops trusted local lea
 
   </div>
 
-  <!-- FOOTER CTA -->
+  <!-- BACK HOME -->
   <div class="text-center mt-4">
     <a href="index.html" class="btn btn-outline-dark">
       Back to Home
@@ -197,11 +196,6 @@ A community education and empowerment initiative that develops trusted local lea
 <footer class="bg-info text-white text-center py-3 mt-5">
   <p class="mb-0">&copy; 2026 Prospire Community Trust | Christchurch, New Zealand</p>
 </footer>
-
-<!-- JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
